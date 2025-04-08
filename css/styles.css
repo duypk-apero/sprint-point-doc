@@ -93,38 +93,67 @@ header {
     opacity: 0.9;
 }
 
-/* Navigation */
-nav {
-    background-color: var(--dark-gray);
-    padding: 1rem 0;
-    position: sticky;
-    top: 0;
-    z-index: 100;
+/* Layout Container */
+.layout-container {
+    display: flex;
+    min-height: calc(100vh - 200px);
+    position: relative;
+    z-index: 1;
 }
 
-nav ul {
-    display: flex;
+/* Sidebar Navigation */
+.sidebar {
+    width: 250px;
+    background-color: var(--white);
+    border-right: 1px solid var(--light-gray);
+    padding: 2rem 0;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    z-index: 2;
+}
+
+.sidebar ul {
     list-style: none;
     padding: 0;
     margin: 0;
-    flex-wrap: wrap;
-    justify-content: center;
 }
 
-nav li {
-    margin: 0 1rem;
+.sidebar li {
+    margin: 0;
+    border-left: 3px solid transparent;
 }
 
-nav a {
-    color: var(--white);
-    font-weight: 500;
-    padding: 0.5rem 0;
+.sidebar a {
+    color: var(--dark-gray);
+    padding: 1rem 1.5rem;
     display: block;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+    text-decoration: none;
 }
 
-nav a:hover {
-    color: var(--light-gray);
-    text-decoration: none;
+.sidebar a:hover {
+    background-color: var(--light-gray);
+    border-left-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+.sidebar a.active {
+    background-color: var(--light-gray);
+    border-left-color: var(--primary-color);
+    color: var(--primary-color);
+    font-weight: 500;
+}
+
+/* Main Content */
+.main-content {
+    flex: 1;
+    padding: 2rem;
+    background-color: #f9f9f9;
+    min-height: 100vh;
 }
 
 /* Main content */
@@ -341,13 +370,36 @@ footer {
         font-size: 1.75rem;
     }
     
-    nav ul {
+    .layout-container {
         flex-direction: column;
-        align-items: center;
     }
-    
-    nav li {
-        margin: 0.5rem 0;
+
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        border-right: none;
+        border-bottom: 1px solid var(--light-gray);
+        padding: 1rem 0;
+    }
+
+    .sidebar ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .sidebar li {
+        margin: 0.25rem;
+    }
+
+    .sidebar a {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+    }
+
+    .main-content {
+        padding: 1rem;
     }
     
     .step {
@@ -422,5 +474,105 @@ tbody tr:nth-child(4) {
 
 tbody tr:nth-child(5) {
     background-color: #bf360c !important; /* Deep red-orange */
+}
+
+/* Risk Analysis Section */
+.risk-analysis-container {
+    padding: 20px 0;
+}
+
+.risk-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.risk-card {
+    background: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.risk-card h4 {
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 1.1em;
+}
+
+.risk-card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.risk-card li {
+    margin: 8px 0;
+    padding-left: 20px;
+    position: relative;
+}
+
+.risk-card li:before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #666;
+}
+
+.risk-scoring {
+    margin: 30px 0;
+}
+
+.formula-card {
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px 0;
+}
+
+.formula {
+    font-family: monospace;
+    font-size: 1.1em;
+    color: #333;
+    margin-bottom: 15px;
+    padding: 10px;
+    background: #fff;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.risk-example {
+    margin: 30px 0;
+}
+
+.risk-details {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.risk-details ul {
+    list-style: none;
+    padding-left: 20px;
+}
+
+.risk-details li {
+    margin: 8px 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .risk-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .formula {
+        font-size: 0.9em;
+    }
+}
+
+/* Remove old navigation styles */
+nav:not(.sidebar) {
+    display: none;
 }
 

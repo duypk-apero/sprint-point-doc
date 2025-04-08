@@ -83,3 +83,48 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+// Highlight active menu item based on scroll position
+document.addEventListener('DOMContentLoaded', () => {
+    const sections = document.querySelectorAll('section');
+    const menuItems = document.querySelectorAll('.sidebar a');
+
+    function setActiveMenuItem() {
+        let currentSection = '';
+        
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+            if (window.pageYOffset >= sectionTop - 150) {
+                currentSection = section.getAttribute('id');
+            }
+        });
+
+        menuItems.forEach(item => {
+            item.classList.remove('active');
+            if (item.getAttribute('href') === `#${currentSection}`) {
+                item.classList.add('active');
+            }
+        });
+    }
+
+    // Update active menu item on scroll
+    window.addEventListener('scroll', setActiveMenuItem);
+    
+    // Set initial active menu item
+    setActiveMenuItem();
+
+    // Smooth scroll to section when clicking menu items
+    menuItems.forEach(item => {
+        item.addEventListener('click', (e) => {
+            e.preventDefault();
+            const targetId = item.getAttribute('href');
+            const targetSection = document.querySelector(targetId);
+            
+            window.scrollTo({
+                top: targetSection.offsetTop - 20,
+                behavior: 'smooth'
+            });
+        });
+    });
+});
