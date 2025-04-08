@@ -21,6 +21,7 @@
                 <li><a href="#gioi-thieu">Giới thiệu</a></li>
                 <li><a href="#fibonacci">Dãy Fibonacci</a></li>
                 <li><a href="#matrix">Ma Trận Story Point</a></li>
+                <li><a href="#phan-tich-do-phuc-tap">Phân Tích Độ Phức Tạp</a></li>
                 <li><a href="#phan-tich-rui-ro">Phân Tích Rủi Ro</a></li>
                 <li><a href="#vi-du">Ví dụ tiêu biểu</a></li>
                 <li><a href="#quy-trinh">Quy trình ước tính</a></li>
@@ -115,6 +116,60 @@
                                 </tr>
                             </tbody>
                         </table>
+                    </div>
+                </section>
+
+                <section id="phan-tich-do-phuc-tap">
+                    <h2>Phân Tích Độ Phức Tạp</h2>
+                    <div class="complexity-analysis">
+                        <div class="complexity-level">
+                            <h3>1: Ít phức tạp</h3>
+                            <ul>
+                                <li>Làm mới những màn hình đơn giản (Row, Column), đã được triển khai qua nhiều phiên bản</li>
+                                <li>Thay đổi thông số, sửa lại những View đã có sẵn</li>
+                                <li>Simple API calls</li>
+                                <li>Shared Prefererences</li>
+                            </ul>
+                        </div>
+                         <div class="complexity-level">
+                            <h3>2: Phức tạp thấp</h3>
+                             <ul>
+                                <li>Simple animations</li>
+                                <li>Basic form validation</li>
+                                <li>RecyclerView với layout đơn giản</li>
+                                <li>Basic data transformations, error handling</li>
+                             </ul>
+                         </div>
+                         <div class="complexity-level">
+                             <h3>3: Phức tạp trung bình</h3>
+                             <ul>
+                                <li>Gesture handling</li>
+                                <li>Complex layout</li>
+                                <li>Pagination</li>
+                                <li>Multiple states handling</li>
+                                <li>Offline first</li>
+                                <li>Custom drawing, animation</li>
+                             </ul>
+                        </div>
+                        <div class="complexity-level">
+                            <h3>4: Phức tạp cao</h3>
+                            <ul>
+                                <li>Complex state machines (real time chat, stream video)</li>
+                                <li>Multi-module architecture</li>
+                                <li>Performance optimization</li>
+                                <li>Real-time sync</li>
+                                <li>Custom integration</li>
+                            </ul>
+                        </div>
+                         <div class="complexity-level">
+                             <h3>5: Phức tạp rất cao</h3>
+                             <ul>
+                                <li>Complex algorithms (machine learning, complex data processing)</li>
+                                <li>Integrating third-party libraries with limited documentation</li>
+                                <li>Security features</li>
+                                <li>Cross-platform complexities</li>
+                             </ul>
+                         </div>
                     </div>
                 </section>
 
@@ -222,29 +277,60 @@
                             <button class="tab-btn" data-tab="point-2">2 Points</button>
                             <button class="tab-btn" data-tab="point-3">3 Points</button>
                             <button class="tab-btn" data-tab="point-5">5 Points</button>
-                            <button class="tab-btn" data-tab="special-case">Trường Hợp Đặc Biệt</button>
+                            <button class="tab-btn" data-tab="point-8plus">8+ Points</button>
                         </div>
                         <div class="tab-content">
                             <div class="tab-pane active" id="point-1">
                                 <div class="example-grid">
                                     <div class="example-card">
-                                        <h4>Ví dụ 1: Cập Nhật Topbar</h4>
-                                        <p><strong>Mô tả:</strong> Cập nhật topbar</p>
-                                        <p><strong>Ước tính giờ:</strong> 2.0</p>
+                                        <h4>Cập Nhật Topba</h4>
+                                        <p><strong>Mô tả:</strong> Cập nhật nội dung hoặc màu sắc của một `TopAppBar`.</p>
+                                        <p><strong>Ước tính giờ:</strong> < 1 giờ</p>
                                         <p><strong>Tại sao là 1 điểm:</strong></p>
                                         <ul>
-                                            <li>Cập nhật UI đơn giản</li>
+                                            <li>Thay đổi tham số đơn giản.</li>
                                             <li>Độ phức tạp và rủi ro tối thiểu</li>
                                         </ul>
                                     </div>
                                     <div class="example-card">
-                                        <h4>Ví dụ 2: Áp Dụng SDK Identify</h4>
-                                        <p><strong>Ước tính giờ:</strong> 2.0</p>
+                                        <h4>Áp Dụng SDK Tutorial</h4>
+                                        <p><strong>Ước tính giờ:</strong> 1 giờ</p>
                                         <p><strong>Tại sao là 1 điểm:</strong></p>
                                         <ul>
-                                            <li>Triển khai đơn giản</li>
+                                            <li>Triển khai đơn giản trong một Composable.</li>
                                             <li>Yêu cầu rõ ràng</li>
                                             <li>Độ phức tạp thấp</li>
+                                        </ul>
+                                    </div>
+                                    <div class="example-card">
+                                        <h4>Cập nhật chuỗi Text</h4>
+                                        <p><strong>Mô tả:</strong> Thay đổi giá trị một chuỗi trong `strings.xml`.</p>
+                                        <p><strong>Ước tính giờ:</strong> < 1 giờ</p>
+                                        <p><strong>Tại sao là 1 điểm:</strong></p>
+                                        <ul>
+                                            <li>Chỉnh sửa file resource đơn giản, gọi hàm resource.</li>
+                                            <li>Ảnh hưởng rõ ràng, dễ kiểm tra.</li>
+                                        </ul>
+                                    </div>
+                                    <div class="example-card">
+                                        <h4>Lưu SharedPreferences</h4>
+                                        <p><strong>Mô tả:</strong> Lưu và đọc một giá trị đơn giản (ví dụ: cài đặt của người dùng) bằng SharedPreferences (thường từ ViewModel).</p>
+                                        <p><strong>Ước tính giờ:</strong> < 1 giờ </p>
+                                        <p><strong>Tại sao là 1 điểm:</strong></p>
+                                        <ul>
+                                            <li>Sử dụng API hệ thống cơ bản (Data layer).</li>
+                                            <li>Logic đơn giản, ít khả năng lỗi.</li>
+                                        </ul>
+                                    </div>
+                                    <div class="example-card">
+                                        <h4>Hiển Thị AlertDialog Composable Đơn Giản</h4>
+                                        <p><strong>Mô tả:</strong> Hiển thị một `AlertDialog` Composable với tiêu đề, thông báo và hai nút (`Button` Composable) để xác nhận hành động.</p>
+                                        <p><strong>Ước tính giờ:</strong> 1-2 giờ</p>
+                                        <p><strong>Tại sao là 1 điểm:</strong></p>
+                                        <ul>
+                                            <li>Sử dụng Composable UI chuẩn.</li>
+                                            <li>Cần quản lý state để hiển thị/ẩn dialog và xử lý lambda của nút bấm.</li>
+                                            <li>Độ phức tạp thấp, logic rõ ràng.</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -252,23 +338,46 @@
                             <div class="tab-pane" id="point-2">
                                 <div class="example-grid">
                                     <div class="example-card">
-                                        <h4>Ví dụ 1: UI/UX List Plant</h4>
-                                        <p><strong>Mô tả:</strong> Bao gồm 3 tab: identify, plant care, diagnose</p>
+                                        <h4>Triển khai UI/UX cơ bản</h4>
+                                        <p><strong>Mô tả:</strong> Xây dựng màn hình với các thành phần Composable đơn giản.</p>
                                         <p><strong>Ước tính giờ:</strong> 5.0</p>
                                         <p><strong>Tại sao là 2 điểm:</strong></p>
                                         <ul>
-                                            <li>Nhiều thành phần</li>
-                                            <li>Yêu cầu rõ ràng</li>
+                                            <li>Nhiều thành phần Composable.</li>
+                                            <li>Quản lý state cơ bản</li>
                                             <li>Độ phức tạp vừa phải</li>
                                         </ul>
                                     </div>
                                     <div class="example-card">
-                                        <h4>Ví dụ 2: Cập Nhật Cơ Sở Dữ Liệu</h4>
+                                        <h4>Cập Nhật Cơ Sở Dữ Liệu</h4>
+                                        <p><strong>Mô tả:</strong> Cập nhật schema Room DB và hiển thị dữ liệu mới trong Compose UI (qua ViewModel/StateFlow).</p>
                                         <p><strong>Ước tính giờ:</strong> 4.0</p>
                                         <p><strong>Tại sao là 2 điểm:</strong></p>
                                         <ul>
                                             <li>Một số phức tạp kỹ thuật</li>
-                                            <li>Lĩnh vực đã được hiểu rõ</li>
+                                            <li>Lĩnh vực đã được hiểu rõ, tích hợp UI đơn giản.</li>
+                                        </ul>
+                                    </div>
+                                    <div class="example-card">
+                                        <h4>LazyColumn đơn giản</h4>
+                                        <p><strong>Mô tả:</strong> Hiển thị một danh sách dữ liệu tĩnh (hardcoded) bằng `LazyColumn`.</p>
+                                        <p><strong>Ước tính giờ:</strong> 3-4 giờ</p>
+                                        <p><strong>Tại sao là 2 điểm:</strong></p>
+                                        <ul>
+                                            <li>Cần tạo Composable cho item.</li>
+                                            <li>Logic cơ bản, không tương tác dữ liệu phức tạp.</li>
+                                            <li>Rủi ro thấp (sai sót nhỏ trong item composable).</li>
+                                        </ul>
+                                    </div>
+                                    <div class="example-card">
+                                        <h4>Điều Hướng Giữa Composable Screens</h4>
+                                        <p><strong>Mô tả:</strong> Sử dụng Navigation Compose để chuyển từ màn hình Composable A sang B, truyền một ID đơn giản qua route.</p>
+                                        <p><strong>Ước tính giờ:</strong> 2-3 giờ</p>
+                                        <p><strong>Tại sao là 2 điểm:</strong></p>
+                                        <ul>
+                                            <li>Sử dụng thư viện Navigation Compose cơ bản.</li>
+                                            <li>Logic điều hướng đơn giản.</li>
+                                            <li>Rủi ro thấp (lỗi nhỏ trong việc định nghĩa route/argument).</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -276,22 +385,69 @@
                             <div class="tab-pane" id="point-3">
                                 <div class="example-grid">
                                     <div class="example-card">
-                                        <h4>Ví dụ 1: SDK Identify - Cập Nhật Phiên Bản SDK</h4>
-                                        <p><strong>Ước tính giờ:</strong> 5.0</p>
-                                        <p><strong>Tại sao là 3 điểm:</strong></p>
-                                        <ul>
-                                            <li>Tích hợp bên thứ ba</li>
-                                            <li>Một số không chắc chắn</li>
-                                            <li>Độ phức tạp trung bình</li>
-                                        </ul>
-                                    </div>
-                                    <div class="example-card">
-                                        <h4>Ví dụ 2: Hiển Thị Dữ Liệu</h4>
+                                        <h4>Hiển Thị Dữ Liệu Phức Tạp</h4>
+                                        <p><strong>Mô tả:</strong> Lấy dữ liệu từ ViewModel, biến đổi và hiển thị trong cấu trúc Composable phức tạp (vd: list lồng nhau, bố cục tùy chỉnh).</p>
                                         <p><strong>Ước tính giờ:</strong> 4.0</p>
                                         <p><strong>Tại sao là 3 điểm:</strong></p>
                                         <ul>
-                                            <li>Xử lý dữ liệu phức tạp</li>
-                                            <li>Logic trình bày phức tạp</li>
+                                            <li>Xử lý/biến đổi dữ liệu trong ViewModel hoặc Composable.</li>
+                                            <li>Logic trình bày Composable phức tạp, quản lý state cho UI.</li>
+                                        </ul>
+                                    </div>
+                                    <div class="example-card">
+                                        <h4>Gọi API đơn giản và hiển thị State</h4>
+                                        <p><strong>Mô tả:</strong> Thực hiện một GET request (qua ViewModel), quản lý các trạng thái UI (Loading, Success, Error) và hiển thị tương ứng trong Composable.</p>
+                                        <p><strong>Ước tính giờ:</strong> 1 ngày</p>
+                                        <p><strong>Tại sao là 3 điểm:</strong></p>
+                                        <ul>
+                                            <li>Cần xử lý bất đồng bộ (ViewModel/Coroutines).</li>
+                                            <li>Quản lý state cho UI (vd: dùng sealed class/interface).</li>
+                                            <li>Rủi ro trung bình về kết nối mạng, lỗi API, quản lý state.</li>
+                                        </ul>
+                                    </div>
+                                    <div class="example-card">
+                                        <h4>Tích hợp Room DB cơ bản</h4>
+                                        <p><strong>Mô tả:</strong> Tạo Entity, DAO, Database và hiển thị dữ liệu (dưới dạng StateFlow) trong Compose UI (`collectAsState`). Thực hiện CRUD cơ bản từ UI.</p>
+                                        <p><strong>Ước tính giờ:</strong> 1-1.5 ngày</p>
+                                        <p><strong>Tại sao là 3 điểm:</strong></p>
+                                        <ul>
+                                            <li>Cần hiểu về kiến trúc Room, Coroutines/Flow.</li>
+                                            <li>Phức tạp hơn SharedPreferences, có thể có lỗi migration nếu thay đổi schema.</li>
+                                            <li>Tích hợp luồng dữ liệu từ DB vào Compose state.</li>
+                                        </ul>
+                                    </div>
+                                    <div class="example-card">
+                                        <h4>LazyColumn với Multiple Item Types</h4>
+                                        <p><strong>Mô tả:</strong> Hiển thị danh sách chứa các loại item khác nhau (ví dụ: header, item A, item B) sử dụng `LazyColumn` và `items` hoặc `item` lambda.</p>
+                                        <p><strong>Ước tính giờ:</strong> 1-2 ngày</p>
+                                        <p><strong>Tại sao là 3 điểm:</strong></p>
+                                        <ul>
+                                            <li>Logic trong `LazyColumn` phức tạp hơn (dùng `key`, `contentType`, logic điều kiện).</li>
+                                            <li>Quản lý dữ liệu cho các loại view khác nhau.</li>
+                                            <li>Rủi ro trung bình (lỗi trong logic item, recomposition không hiệu quả).</li>
+                                        </ul>
+                                    </div>
+                                    <div class="example-card">
+                                        <h4>Xử lý Runtime Permission cơ bản</h4>
+                                        <p><strong>Mô tả:</strong> Sử dụng thư viện Accompanist Permissions hoặc API mới để yêu cầu quyền lúc chạy từ một Composable, hiển thị giải thích và cập nhật UI dựa trên trạng thái quyền.</p>
+                                        <p><strong>Ước tính giờ:</strong> 1 ngày</p>
+                                        <p><strong>Tại sao là 3 điểm:</strong></p>
+                                        <ul>
+                                            <li>Cần hiểu về quy trình xin quyền và cách tích hợp với Compose (quản lý state quyền).</li>
+                                            <li>Xử lý luồng bất đồng bộ và cập nhật state.</li>
+                                            <li>Rủi ro trung bình (quên khai báo Manifest, xử lý không đúng các trạng thái/trường hợp từ chối).</li>
+                                        </ul>
+                                    </div>
+                                    <div class="example-card">
+                                        <h4>Triển Khai Paging Cơ Bản (Network + Compose)</h4>
+                                        <p><strong>Mô tả:</strong> Sử dụng Paging để tải dữ liệu từ API Network và hiển thị trong `LazyColumn` bằng `collectAsLazyPagingItems`. Xử lý trạng thái loading/error cơ bản của Paging.</p>
+                                        <p><strong>Ước tính giờ:</strong> 1.5 - 2 ngày</p>
+                                        <p><strong>Tại sao là 3 điểm:</strong></p>
+                                        <ul>
+                                            <li>Cần setup PagingSource, tích hợp ViewModel và `collectAsLazyPagingItems`.</li>
+                                            <li>Hiểu và xử lý các `LoadState` trong Composable.</li>
+                                            <li>Phức tạp hơn LazyColumn đơn giản, có yếu tố bất đồng bộ và quản lý state phức tạp hơn.</li>
+                                            <li>Rủi ro trung bình liên quan đến tích hợp API, xử lý lỗi paging, recomposition.</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -299,36 +455,77 @@
                             <div class="tab-pane" id="point-5">
                                 <div class="example-grid">
                                     <div class="example-card">
-                                        <h4>Ví dụ 1: Thiết Lập Dự Án - Cấu Trúc Cơ Bản</h4>
-                                        <p><strong>Mô tả:</strong> Module hóa tất cả feature: reminder, my garden, chat, categories, setting</p>
+                                        <h4>Thiết Lập Dự Án Compose - Cấu Trúc Module Cơ Bản</h4>
+                                        <p><strong>Mô tả:</strong> Module hóa các feature (reminder, my garden, chat, etc.) trong dự án Compose, thiết lập navigation graph, DI cơ bản.</p>
                                         <p><strong>Ước tính giờ:</strong> 7.0</p>
                                         <p><strong>Tại sao là 5 điểm:</strong></p>
                                         <ul>
-                                            <li>Công việc kiến trúc</li>
-                                            <li>Độ phức tạp cao</li>
-                                            <li>Ảnh hưởng đến các tính năng khác</li>
+                                            <li>Công việc kiến trúc (quyết định cấu trúc module, navigation).</li>
+                                            <li>Độ phức tạp cao (thiết lập build scripts, DI, navigation).</li>
+                                            <li>Ảnh hưởng đến toàn bộ dự án.</li>
                                         </ul>
                                     </div>
                                     <div class="example-card">
-                                        <h4>Ví dụ 2: Module Tính Năng Cơ Bản</h4>
-                                        <p><strong>Ước tính giờ:</strong> 7.0</p>
+                                        <h4>Màn hình Compose phức tạp với nhiều trạng thái</h4>
+                                        <p><strong>Mô tả:</strong> Xây dựng màn hình Compose có nhiều trạng thái UI phức tạp (loading, error với thông báo khác nhau, success với data, empty, partial loading) dựa trên nhiều nguồn dữ liệu (API, DB) được observe trong ViewModel.</p>
+                                        <p><strong>Ước tính giờ:</strong> 3-4 ngày</p>
                                         <p><strong>Tại sao là 5 điểm:</strong></p>
                                         <ul>
-                                            <li>Chức năng cốt lõi</li>
-                                            <li>Nhiều phụ thuộc</li>
-                                            <li>Độ phức tạp cao</li>
+                                            <li>Quản lý state rất phức tạp (ViewModel, StateFlow/SharedFlow, `produceState`, `derivedStateOf`).</li>
+                                            <li>Kết hợp nhiều nguồn dữ liệu bất đồng bộ.</li>
+                                            <li>Rủi ro cao về logic state, xử lý lỗi tinh vi, trải nghiệm người dùng, performance (recomposition).</li>
+                                        </ul>
+                                    </div>
+                                    <div class="example-card">
+                                        <h4>Composable tùy chỉnh với Gesture Handling</h4>
+                                        <p><strong>Mô tả:</strong> Tạo một Composable tùy chỉnh (vd: vẽ đồ thị) sử dụng `Canvas` và `Modifier.pointerInput` để xử lý các cử chỉ kéo, zoom.</p>
+                                        <p><strong>Ước tính giờ:</strong> 3-5 ngày</p>
+                                        <p><strong>Tại sao là 5 điểm:</strong></p>
+                                        <ul>
+                                            <li>Cần kiến thức về `Canvas` API trong Compose, `Modifier.pointerInput` hoặc `detectGestures`.</li>
+                                            <li>Logic tính toán tọa độ, transform phức tạp trong môi trường Compose.</li>
+                                            <li>Quản lý state cho các thuộc tính vẽ và cử chỉ.</li>
+                                            <li>Rủi ro cao về performance và độ chính xác của gesture.</li>
                                         </ul>
                                     </div>
                                 </div>
                             </div>
-                            <div class="tab-pane" id="special-case">
-                                <div class="special-case-card">
-                                    <h4>Trường Hợp Đặc Biệt: Điều Chỉnh Độ Phức Tạp</h4>
-                                    <p><strong>Task:</strong> Triển Khai Cơ Sở Dữ Liệu Categories</p>
-                                    <p><strong>Ước tính ban đầu:</strong> 2 điểm</p>
-                                    <p><strong>Ước tính điều chỉnh:</strong> 3 điểm</p>
-                                    <p><strong>Ghi chú:</strong> "Tăng từ 2 point -> 3 point do số lượng code nhiều và tốn time để chuyển logic từ xml sang compose"</p>
-                                    <p><strong>Bài học:</strong> Story point nên được điều chỉnh khi thông tin mới tiết lộ độ phức tạp bổ sung</p>
+                            <div class="tab-pane" id="point-8plus">
+                                <div class="example-grid">
+                                    <div class="example-card">
+                                        <h4>Xây dựng tính năng Chat Real-time (Compose UI)</h4>
+                                        <p><strong>Mô tả:</strong> Triển khai màn hình chat Compose sử dụng WebSocket/Firebase, xử lý gửi/nhận real-time, trạng thái online/offline, hiển thị trong `LazyColumn`.</p>
+                                        <p><strong>Ước tính giờ:</strong> > 1 tuần</p>
+                                        <p><strong>Tại sao là 8+ điểm:</strong></p>
+                                        <ul>
+                                            <li>Kiến trúc phức tạp (quản lý kết nối, state real-time trong ViewModel/Repository).</li>
+                                            <li>Độ phức tạp rất cao về đồng bộ dữ liệu, xử lý lỗi kết nối, tối ưu `LazyColumn` cho tin nhắn mới.</li>
+                                            <li>Rủi ro rất cao liên quan đến performance, scalability, độ ổn định, quản lý lifecycle của kết nối.</li>
+                                        </ul>
+                                    </div>
+                                    <div class="example-card">
+                                        <h4>Tối ưu hóa Performance Compose nặng</h4>
+                                        <p><strong>Mô tả:</strong> Phân tích và tối ưu một màn hình Compose có performance kém (recomposition quá nhiều, `LazyColumn` giật) sử dụng Layout Inspector, Recomposition counts, Baseline Profiles.</p>
+                                        <p><strong>Ước tính giờ:</strong> > 5 ngày (phụ thuộc vào vấn đề)</p>
+                                        <p><strong>Tại sao là 8+ điểm:</strong></p>
+                                        <ul>
+                                            <li>Đòi hỏi kiến thức sâu về recomposition, state stability, `remember`, `derivedStateOf`, `produceState`, tối ưu `LazyColumn`.</li>
+                                            <li>Tính không chắc chắn cao (khó xác định nguyên nhân recomposition không cần thiết).</li>
+                                            <li>Rủi ro cao trong việc fix mà không gây ra lỗi khác hoặc ảnh hưởng logic.</li>
+                                        </ul>
+                                    </div>
+                                    <div class="example-card">
+                                        <h4>Background Processing phức tạp (WorkManager + Compose UI)</h4>
+                                        <p><strong>Mô tả:</strong> Triển khai chuỗi công việc background phức tạp với WorkManager, và cập nhật trạng thái/tiến trình lên Compose UI một cách đáng tin cậy (vd: qua Room + Flow).</p>
+                                        <p><strong>Ước tính giờ:</strong> > 1 tuần</p>
+                                        <p><strong>Tại sao là 8+ điểm:</strong></p>
+                                        <ul>
+                                            <li>Quản lý state của background task phức tạp và đồng bộ với UI state.</li>
+                                            <li>Xử lý các ràng buộc, policy của Android về background execution.</li>
+                                            <li>Rủi ro cao về việc task bị kill, mất state UI, tiêu tốn pin.</li>
+                                            <li>Độ phức tạp cao trong việc test và debug luồng end-to-end.</li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                         </div>

@@ -1,17 +1,26 @@
 /* Base styles */
 :root {
     --primary-color: #0078D4;
+    --secondary-color: #005a9e; /* Darker shade for gradients/hovers */
     --dark-gray: #333333;
+    --medium-gray: #666666; /* Added for less prominent text */
     --light-gray: #F0F0F0;
+    --very-light-gray: #f9f9f9; /* Added for subtle backgrounds */
     --white: #FFFFFF;
     --shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    --border-radius: 4px;
+    --hover-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Enhanced shadow for hover */
+    --border-radius: 6px; /* Slightly larger radius */
     --transition: all 0.3s ease;
     --sp-color-1: #fff3e0; /* Orange 50 */
     --sp-color-2: #ffa726; /* Orange 400 */
     --sp-color-3: #f57c00; /* Orange 700 */
     --sp-color-4: #e65100; /* Orange 900 */
     --sp-color-5: #bf360c; /* Deep Orange 900 */
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: var(--dark-gray);
+    background-color: var(--white);
+    scroll-behavior: smooth; /* Added for smooth scrolling */
 }
 
 * {
@@ -47,10 +56,11 @@ h1 {
 }
 
 h2 {
-    font-size: 2rem;
-    margin-top: 2rem;
+    font-size: 2.2rem; /* Slightly larger */
+    margin-top: 3rem; /* More space above */
     padding-bottom: 0.5rem;
     border-bottom: 2px solid var(--primary-color);
+    font-weight: 700; /* Bolder */
 }
 
 h3 {
@@ -62,12 +72,16 @@ h4 {
 }
 
 p {
-    margin-bottom: 1rem;
+    margin-bottom: 1.2rem; /* More space after paragraphs */
 }
 
 ul, ol {
-    margin-bottom: 1rem;
+    margin-bottom: 1.2rem; /* More space after lists */
     padding-left: 1.5rem;
+}
+
+li {
+    margin-bottom: 0.5rem; /* Add space between list items */
 }
 
 a {
@@ -104,9 +118,9 @@ header {
 /* Sidebar Navigation */
 .sidebar {
     width: 250px;
-    background-color: var(--white);
+    background-color: var(--very-light-gray); /* Subtle background */
     border-right: 1px solid var(--light-gray);
-    padding: 2rem 0;
+    padding-top: 2rem;
     position: sticky;
     top: 0;
     height: 100vh;
@@ -151,7 +165,7 @@ header {
 /* Main Content */
 .main-content {
     flex: 1;
-    padding: 2rem;
+    padding: 2.5rem; /* More padding around content */
     background-color: #f9f9f9;
     min-height: 100vh;
 }
@@ -162,8 +176,8 @@ main {
 }
 
 section {
-    margin-bottom: 3rem;
-    padding: 1.5rem;
+    margin-bottom: 3.5rem; /* More space between sections */
+    padding: 2rem; /* More internal padding */
     background-color: var(--white);
     border-radius: var(--border-radius);
     box-shadow: var(--shadow);
@@ -180,18 +194,26 @@ section {
 .fibonacci-sequence span {
     display: inline-block;
     padding: 0.5rem 1rem;
-    background-color: var(--primary-color);
+    background-image: linear-gradient(to bottom right, var(--primary-color), var(--secondary-color)); /* Gradient */
     color: var(--white);
     border-radius: var(--border-radius);
     font-weight: 500;
     text-align: center;
     min-width: 50px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1); /* Subtle shadow */
+    transition: var(--transition);
+}
+
+.fibonacci-sequence span:hover {
+    transform: translateY(-2px); /* Slight lift on hover */
+    box-shadow: 0 3px 6px rgba(0,0,0,0.15);
 }
 
 /* Table styles */
 .table-responsive {
     overflow-x: auto;
     margin-bottom: 1.5rem;
+    border-bottom: 1px solid var(--light-gray);
 }
 
 table {
@@ -207,12 +229,8 @@ th, td {
 }
 
 th {
-    background-color: var(--primary-color);
+    background-color: var(--secondary-color); /* Darker for header */
     color: var(--white);
-}
-
-tr:nth-child(even) {
-    background-color: var(--light-gray);
 }
 
 /* Accordion */
@@ -307,45 +325,68 @@ tr:nth-child(even) {
     gap: 1.5rem;
 }
 
-.example-card, .special-case-card {
+.example-card, .special-case-card, .risk-card { /* Apply hover to risk cards too */
+    background-color: #ffffff;
     padding: 1.5rem;
-    background-color: var(--light-gray);
     border-radius: var(--border-radius);
-    height: 100%;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    margin-bottom: 1rem; /* Ensure cards have space below */
+}
+
+.example-card:hover, .risk-card:hover { /* Hover effect */
+    box-shadow: var(--hover-shadow);
+    transform: translateY(-3px);
 }
 
 .special-case-card {
-    background-color: #FFF8E1;
+    background-color: #fff9c4; /* Light yellow background */
     border-left: 4px solid #FFC107;
 }
 
 /* Process steps */
 .process-steps {
-    margin: 2rem 0;
+    margin-top: 2rem;
+    position: relative; /* For potential future lines */
 }
 
 .step {
     display: flex;
-    margin-bottom: 2rem;
+    align-items: flex-start; /* Align items to the top */
+    margin-bottom: 2.5rem; /* More space between steps */
+    position: relative;
 }
 
+/* Optional: Add connecting lines (simple version) */
+/* .step:not(:last-child)::before {
+    content: '';
+    position: absolute;
+    left: 20px;
+    top: 50px;
+    bottom: -2.5rem;
+    width: 2px;
+    background-color: var(--light-gray);
+    z-index: -1;
+} */
+
 .step-number {
+    flex-shrink: 0; /* Prevent shrinking */
+    width: 45px; /* Slightly larger */
+    height: 45px;
+    background-color: var(--secondary-color); /* Use darker shade */
+    color: var(--white);
+    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 50px;
-    height: 50px;
-    background-color: var(--primary-color);
-    color: var(--white);
-    border-radius: 50%;
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin-right: 1.5rem;
-    flex-shrink: 0;
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin-right: 1.5rem; /* More space to the right */
+    box-shadow: var(--shadow);
 }
 
 .step-content {
-    flex-grow: 1;
+    flex-grow: 1; /* Allow content to take remaining space */
 }
 
 .step-content h3 {
@@ -574,5 +615,47 @@ tbody tr:nth-child(5) {
 /* Remove old navigation styles */
 nav:not(.sidebar) {
     display: none;
+}
+
+/* Specific Matrix Table Styling (Overrides general table styles) */
+.modern-matrix th {
+    background-color: var(--secondary-color); /* Consistent header */
+}
+
+/* Complexity Analysis section */
+.complexity-analysis {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive columns */
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.complexity-level {
+    background-color: var(--very-light-gray);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--light-gray);
+}
+
+.complexity-level h3 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+    color: var(--primary-color);
+}
+
+.complexity-level ul {
+    padding-left: 1.2rem;
+    margin-bottom: 0; /* Remove bottom margin inside card */
+}
+
+.complexity-level li {
+    margin-bottom: 0.4rem;
+    color: var(--medium-gray); /* Slightly lighter text */
+}
+
+/* Risk Analysis section styling */
+.risk-analysis-container {
+    margin-top: 1.5rem;
 }
 
